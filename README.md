@@ -16,9 +16,20 @@
 *   **スモークテスト機能**: セットアップ完了後、軽量なLLMモデルを自動でダウンロードし、実際に推論が可能かを確認するテストを実行できます。
 *   **ログ・スナップショット保存**: 実行時の詳細なログと、構築された環境の構成情報をJSON形式で保存します。
 
+### ⚠️ 事前準備・よくあるエラー (Prerequisites)
+ハードウェアアクセラレーション（GPU）を有効にしてビルドする場合、各OSに応じたビルドツールが必要です。エラーが発生する場合は以下を確認してください。
+
+*   **Windows**
+    *   C++コンパイラが必要です。Visual Studio 2022 または Build Tools で「C++ によるデスクトップ開発」をインストールしてください。
+    *   通常のコマンドプロンプトやPowerShellではなく、スタートメニューから **Developer PowerShell for VS 2022** を開いて本スクリプトを実行してください（正しく64ビットコンパイラを認識させるためです）。
+*   **macOS (Apple Silicon Metal)**
+    *   Xcode Command Line Toolsが必要です。ターミナルで `xcode-select --install` を実行してください。
+*   **Linux**
+    *   C++コンパイラとCMakeが必要です。（Ubuntu等の場合: `sudo apt install build-essential cmake`）
+
 ### 使用方法
 1.  本リポジトリをクローンまたはダウンロードします。
-2.  ターミナル（またはPowerShell）を開き、本ディレクトリに移動します。
+2.  ターミナル（または Windowsの場合は Developer PowerShell）を開き、本ディレクトリに移動します。
 3.  以下のコマンドを実行します。
     ```bash
     python setup_wizard.py
@@ -40,9 +51,20 @@ It optimizes the build and configuration of `llama-cpp-python` to run GGUF forma
 *   **Smoke Test**: After setup, it can automatically download a lightweight LLM model and perform an inference test to verify the environment.
 *   **Logging & Environment Snapshots**: Saves detailed execution logs and environment configuration details in JSON format.
 
+### ⚠️ Prerequisites & Troubleshooting
+If you choose to build with hardware acceleration (GPU), specific build tools are required for your OS. If you encounter build errors, ensure the following are installed:
+
+*   **Windows**
+    *   Requires a C++ compiler. Install "Desktop development with C++" via Visual Studio 2022 or Build Tools.
+    *   Do not use the standard PowerShell. Instead, launch **Developer PowerShell for VS 2022** from the Start menu and run this script from there (this ensures the x64 compiler is properly loaded).
+*   **macOS (Apple Silicon Metal)**
+    *   Requires Xcode Command Line Tools. Run `xcode-select --install` in your terminal.
+*   **Linux**
+    *   Requires a C++ compiler and CMake. (e.g., on Ubuntu: `sudo apt install build-essential cmake`)
+
 ### How to Use
 1.  Clone or download this repository.
-2.  Open a terminal (or PowerShell) and navigate to this directory.
+2.  Open a terminal (or Developer PowerShell on Windows) and navigate to this directory.
 3.  Run the following command:
     ```bash
     python setup_wizard.py
