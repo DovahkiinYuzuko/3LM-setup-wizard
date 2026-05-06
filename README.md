@@ -1,5 +1,8 @@
 # 3LM-setup-wizard
 
+## 目次/INDEX
+[日本語](#日本語)|[English](#english)
+
 ## 日本語
 
 ### 概要
