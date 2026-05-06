@@ -1,0 +1,8 @@
+# GGUF推論用メインエンジン / Main engine for GGUF inference
+llama-cpp-python
+
+# モデルのダウンロード・管理用 / For downloading and managing models from Hugging Face
+huggingface_hub
+
+# 数値計算・データ処理用 / For numerical computation and data processing
+numpy
